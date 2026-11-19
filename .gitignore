@@ -1,0 +1,21 @@
+# Ignore all source code and temporary files
+*.c
+*.cpp
+*.cxx
+*.cc
+*.h
+*.hpp
+*.hxx
+*.S
+*.s
+*.o
+*.a
+*.obj
+*.py
+*.sh
+*.bat
+.DS_Store
+Thumbs.db
+.pio/
+.vscode/
+.idea/

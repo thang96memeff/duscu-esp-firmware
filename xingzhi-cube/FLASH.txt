@@ -1,0 +1,11 @@
+Duscu ESP 2.0 | xingzhi-cube
+Local build; physical hardware validation is required before release.
+Chip: esp32s3. Flash: 16MB N16R8 / 8MB Octal PSRAM
+Install esptool separately. From the extracted package directory:
+python -m esptool --chip esp32s3 --port YOUR_PORT write-flash 0x0 firmware/bootloader.bin 0x8000 firmware/partitions.bin 0x10000 firmware/firmware.bin
+Only use this package with the named board. Do not erase flash automatically.
+New layout reserves the final128KiB for /config/settings.json and shrinks user SPIFFS. Back up internal files before flashing this partition table; old filesystem size may be incompatible. No automatic migration or erase of nonblank data. See docs/BOOT_CONFIG.md.
+N16R8 layout moves SPIFFS from 0x210000 to 0x310000. Back up files before migrating from the 4MB layout. Old filesystem data is not migrated; no automatic format.
+Retain THIRD_PARTY.md and all notices when redistributing.
+
+Merged: duscu-xingzhi-cube-merged.bin at0x0. It overwrites the NVS/PHY padding; split files preserve compatible NVS. Never erase/format automatically.

@@ -1,0 +1,7 @@
+Duscu-ESP Compiled Firmware Distribution
+
+This repository contains precompiled binary images and packaging metadata for Duscu-ESP.
+No source code is distributed through this repository.
+
+Third-party components embedded within the binaries retain their original open-source licenses.
+Redistribution of these binaries must retain this notice and the accompanying manifest/notices.

@@ -13,6 +13,7 @@ Kho chứa chính thức phân phối các bản firmware đã biên dịch sẵ
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **M5Stack StickS3** | ESP32-S3 | 8MB / 8MB OPI | ST7789v3 (135x240) | Bruce 2-button (M5 & Side) | `m5stack-sticks3/duscu-m5stack-sticks3-merged.bin` |
 | **Xingzhi Cube** | ESP32-S3 | 16MB / 8MB OPI | ST7789 (240x240) | 3-button cơ bản | `xingzhi-cube/duscu-xingzhi-cube-merged.bin` |
+| **ESP32-S3 Super Mini** | ESP32-S3 | 4MB / Không PSRAM | ST7789 1.47" (320x170) | 3-button (Up:3, Down:2, OK:1) | `s3-super-mini/duscu-s3-super-mini-merged.bin` |
 
 ---
 
@@ -30,6 +31,11 @@ python -m esptool --chip esp32s3 -p <PORT> -b 921600 write_flash 0x0 m5stack-sti
 #### Cho Xingzhi Cube:
 ```bash
 python -m esptool --chip esp32s3 -p <PORT> -b 921600 write_flash 0x0 xingzhi-cube/duscu-xingzhi-cube-merged.bin
+```
+
+#### Cho ESP32-S3 Super Mini:
+```bash
+python -m esptool --chip esp32s3 -p <PORT> -b 921600 write_flash 0x0 s3-super-mini/duscu-s3-super-mini-merged.bin
 ```
 
 ---
@@ -52,6 +58,14 @@ python -m esptool --chip esp32s3 -p <PORT> -b 921600 write_flash \
   0x0 xingzhi-cube/bootloader.bin \
   0x8000 xingzhi-cube/partitions.bin \
   0x10000 xingzhi-cube/firmware.bin
+```
+
+#### Cho ESP32-S3 Super Mini:
+```bash
+python -m esptool --chip esp32s3 -p <PORT> -b 921600 write_flash \
+  0x0 s3-super-mini/bootloader.bin \
+  0x8000 s3-super-mini/partitions.bin \
+  0x10000 s3-super-mini/firmware.bin
 ```
 
 ---
@@ -89,3 +103,16 @@ Firmware M5Stick S3 sử dụng mô hình điều hướng 2 nút bấm tương 
 * **Bus SPI ngoại vi**: SCK: `5`, MISO: `4`, MOSI: `6` | SD CS: `7`, CC1101 CS: `2`, GDO0: `3`, nRF24 CS: `8`, CE: `1`
 * **Giao tiếp đồng xử lý BW16**: UART TX: `43`, RX: `44`
 * **Cổng mở rộng Grove**: SDA: `9`, SCL: `10`
+
+---
+
+## 🛠 Sơ đồ chân phần cứng ESP32-S3 Super Mini (Màn hình 1.47")
+
+* **Màn hình ST7789 1.47" (320x170)**: CS: `44` | DC: `13` | RST: `12` | MOSI: `11` | CLK: `10` | BL: `43` (Offset X: `35`, Y: `0`)
+* **Nút bấm điều hướng (3 nút vật lý)**:
+  - **Up / Previous**: GPIO `3`
+  - **Down / Next**: GPIO `2`
+  - **Select / OK**: GPIO `1`
+* **Hồng ngoại (Infrared)**: TX: `14`, RX: `15`
+* **Bus SPI ngoại vi**: MOSI: `11`, MISO: `8`, SCK: `10` | SD CS: `7`, CC1101 CS: `17`, GDO0: `16`, nRF24 CS: `18`, CE: `21`
+* **Giao tiếp đồng xử lý BW16**: UART TX: `4`, RX: `5`

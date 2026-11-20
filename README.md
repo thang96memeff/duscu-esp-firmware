@@ -15,6 +15,10 @@ Kho chứa chính thức phân phối các bản firmware đã biên dịch sẵ
 | **Xingzhi Cube** | ESP32-S3 | 16MB / 8MB OPI | ST7789 (240x240) | 3-button cơ bản | `xingzhi-cube/duscu-xingzhi-cube-merged.bin` |
 | **ESP32-S3 Super Mini** | ESP32-S3 | 4MB / Không PSRAM | ST7789 1.47" (320x170) | 3-button (Up:3, Down:2, OK:1) | `s3-super-mini/duscu-s3-super-mini-merged.bin` |
 
+> [!TIP]
+> **Lưu ý đặc biệt cho bo mạch Xingzhi Cube (NoLogo 1.54" TFT WiFi):**
+> Bo mạch Xingzhi Cube thương mại sử dụng mạch giữ nguồn phần cứng (hardware power-hold latch) nối với **GPIO 21**. Firmware `duscu-esp` phiên bản mới nhất đã kích hoạt tự động giữ mức logic `HIGH` trên GPIO 21 ngay khi khởi động để duy trì nguồn điện khi nhả nút nguồn (khắc phục hoàn toàn lỗi board thương mại bị tắt nguồn ngay khi buông tay).
+
 ---
 
 ## 🚀 Hướng dẫn nạp Firmware (Flashing Guide)

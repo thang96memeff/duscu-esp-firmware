@@ -145,9 +145,9 @@
     "src/hal/audio/speaker.h": "6c423b4507f5a23a5c971a81492e6cdc0366fba3570c27c99781ca180af1a999",
     "src/hal/battery.cpp": "99a7ab2aeaae8b962440a47d75abcd1d0046db6fac3cbac5ba80e6a1eeca7669",
     "src/hal/battery.h": "51c0345270d5bf659564ef0d1243c31e8137d262e4d8d81c678b70fa4e64ee12",
-    "src/hal/board.h": "4a01fbcf9efaf882d80d26cb8def6ad29b8039448e528a8eacbaa19d787ec25f",
+    "src/hal/board.h": "2b36de34e41d091542830447d13647bb61dd60d2c19536cc78141b57a6efc8fe",
     "src/hal/board_runtime.h": "63c8ad59b3673664f7bd5b497ab7e731f6b0c6af44a28f460e0ab898218456f1",
-    "src/hal/boards/m5sticks3.cpp": "9c4d4dfe2ec3024c7c2489c5b019c86df841e52eecacdd069911bb9d10a265ee",
+    "src/hal/boards/m5sticks3.cpp": "8604917f0ff5e1434ff2523c54768b6d4bfa5a209c5fd3054d65e394caefef20",
     "src/hal/boards/pm1_model.h": "3f945bbd70344d5e35bcbb77ed83353831437efcdc81752724d9443a55ebe9a7",
     "src/hal/bus/shared_spi.cpp": "522694c6d6c9cceeadce15ec077e5a6bd3382f92cde95d458e11045a38ea6d0d",
     "src/hal/bus/shared_spi.h": "272b8eabe5a3242deaf138eadf3a5074a360c3ab15a923c7015433800c607048",
@@ -282,15 +282,18 @@
     "assets/boot/duscu-esp-boot.jpg": "380e64e08634b4f27a91513c0eee43fdd8b7de4350202266e1dffe31f5a55180"
   },
   "build_inputs": {
-    "platformio.ini": "139b453bb76db9d9e3345ef956e08557848e0438a815d27871ba052e6fda6d60",
-    "CMakeLists.txt": "dc2567ac3c8f4800a904da82ee2f42f729248d859be6267521da069b5d20df44",
+    "platformio.ini": "59d29ccc1d4cd5c3ebe92e329faa9e50a0ba94340cfbb1581802e399458124d7",
+    "CMakeLists.txt": "1fe4e59f8d64821ac7d4939d571dce29b0ada7bdb5cbe132fe3fbe5f2f2f1de2",
     "sdkconfig.defaults": "d6c1ec6478ef73a039df940b0c7848c7d159184820316ca50e93817b53ebfb05",
     "sdkconfig.m5sticks3.defaults": "cb9165e077c420b9707a1861a08c82643c3371d8663b0cb0df66e04838081490",
+    "sdkconfig.s3supermini.defaults": "eebc413cc7f82446dcc15a04729e3fbcef5d4aeaca9f6fc4c725ced6c7578725",
     "sdkconfig.xingzhi.defaults": "dd8e868c2eb73900773e980976f5636d936198f60fe9a3b8c98d601b50e1871d",
     "partitions-n16r8.csv": "028fd5d5b2d02916d62239fae44dec2dc087b625c1e099d3d47540d27e48b7fe",
+    "partitions-n4.csv": "229748822f9e919fd92d67de866b7a2793b10724564061300c4cd78642666888",
     "partitions-n8r8.csv": "e4df3d0d6433a733613651c02306ca632b9b2a61776c3fcc9c0412c28192ae5e",
     "partitions.csv": "4a5d834443c67142bf305c3df086c83ac315f0ced453a1690e43ddd0aba8dcc0",
     "boards/duscu-m5stack-sticks3-n8r8.json": "f820d23787f782152510be4a4864c2043651b30a899fe7e158d9b853f45dc840",
+    "boards/duscu-s3-super-mini-n4.json": "0762d3ef27a7269420da1c76b5432aa639cb4085340794b343d655e65ddf1283",
     "boards/xingzhi-cube-n16r8.json": "bc54fc145172e11f2e507fbb2904a8977f6f4b23dda7924663f3ffd8a850fd9f"
   },
   "files": {
@@ -315,8 +318,8 @@
     "docs/development/m5sticks3-board-review.json": "a2208c64b06e423709238b2459787910e15f55e59b8551e1d4f50ed78e527576",
     "docs/game-provenance.json": "9123beb2fd405ec1c05cb450b3d13fbec8d2ee36abfa193e1519b5b9ed5f8088",
     "docs/source-layout.json": "c483b851dc35b208098e4689282f199911160d437dbc36ea121a75c46221c3e7",
-    "firmware/bootloader.bin": "2612fe480952a6672f3e710c4a316104e1b42e829693e862ca74c38a2a984ff5",
-    "firmware/firmware.bin": "464300768b80229cf62ea5c3199fdd532dffc1004260da51d0b933184219f86a",
+    "firmware/bootloader.bin": "ba46e82259f925a6db82a18fb16e4bc67dc064fe55cf45fba09e41d2521d79a0",
+    "firmware/firmware.bin": "755b666114b2ec3e1b5f0f6beec369e97af2f6ce45e2b9af637e2642a8cfd582",
     "firmware/partitions.bin": "badad6cffe812893309ab29014edee2981a4b88a5a331e024796120b24ffde04",
     "licenses/BSD-Adafruit-GFX.txt": "3e7bede50526352926c2283e640f2823d9f9f2165d1852044c4fb1bbac283106",
     "licenses/MPL-2.0.txt": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
@@ -845,7 +848,7 @@
   "limits": "Source provenance and license notices are not a legal guarantee. No physical hardware test performed by the packaging tool.",
   "merged": {
     "file": "duscu-xingzhi-cube-merged.bin",
-    "sha256": "59326f181f8a419ad0d7d5cff5a6c605de6ebbdfd9ba0f764abe07f9c1ebe5b9",
+    "sha256": "70b560355b268ac07e901705d3e3d802a03ac907fa2bd04672c4c6b7059a6cd6",
     "offset": "0x0"
   },
   "flash_settings": {
